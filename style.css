@@ -1,43 +1,370 @@
+/* =====================================
+   RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =====================================
+   BODY
+===================================== */
+
 body {
     background: #111;
     color: white;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    font-family: Arial;
+    min-height: 100vh;
+    padding: 10px;
+    overflow-x: hidden;
 }
 
+
+/* =====================================
+   LOGO
+===================================== */
+
+.logo-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 8px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    align-items: center;
+}
+
+
+/* Logo kiri */
+
+.logo-kiri {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+
+/* Logo kanan */
+
+.logo-kanan {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 5px;
+}
+
+
+/* Logo tengah */
+
+.logo-tengah {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Logo kiri dan kanan */
+
+.logo-kiri img,
+.logo-kanan img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+
+/* Logo tengah */
+
+.logo-tengah img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+
+/* =====================================
+   JUDUL
+===================================== */
+
+h1 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+
+/* =====================================
+   AREA GAME
+===================================== */
 
 #game {
-    width: 400px;
-    height: 500px;
+    width: 350px;
+    height: 450px;
+
+    max-width: 95vw;
+
     margin: auto;
+
     position: relative;
+
     overflow: hidden;
-    border: 2px solid white;
+
+    border: 3px solid white;
+
+    border-radius: 12px;
+
+    background: #111;
 }
 
 
-/* Target */
+/* =====================================
+   TARGET
+===================================== */
+
 #target {
     position: absolute;
-    top: 50px;
-    left: 130px;
-    font-size: 120px;
+
+    top: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 110px;
 }
 
 
-/* Pisau */
+/* =====================================
+   PISAU
+===================================== */
+
 #knife {
     position: absolute;
-    bottom: 20px;
-    left: 175px;
+
+    bottom: 15px;
+
+    left: 50%;
+
+    transform: translateX(-50%) rotate(-45deg);
+
     font-size: 50px;
-    transform: rotate(-45deg);
 }
 
 
-button {
-    margin-top: 20px;
-    padding: 15px 30px;
-    font-size: 18px;
+/* =====================================
+   SKOR
+===================================== */
+
+.score-box {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.score-box h2 {
+    font-size: 21px;
+}
+
+
+/* =====================================
+   TOMBOL
+===================================== */
+
+#throwBtn {
+    width: 280px;
+    max-width: 90vw;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: white;
+
+    color: #111;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
     cursor: pointer;
+
+    touch-action: manipulation;
+}
+
+
+/* Efek tombol */
+
+#throwBtn:hover {
+    background: #ddd;
+}
+
+
+#throwBtn:active {
+    transform: scale(0.95);
+}
+
+
+/* =====================================
+   PETUNJUK
+===================================== */
+
+.petunjuk {
+    margin-top: 8px;
+
+    font-size: 13px;
+
+    color: #aaa;
+}
+
+
+/* =====================================
+   TAMPILAN HP
+===================================== */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 8px;
+    }
+
+
+    /* Logo HP */
+
+    .logo-container {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+
+    .logo-kiri,
+    .logo-kanan {
+        gap: 4px;
+    }
+
+
+    .logo-kiri img,
+    .logo-kanan img {
+        width: 48px;
+        height: 48px;
+    }
+
+
+    .logo-tengah img {
+        width: 65px;
+        height: 65px;
+    }
+
+
+    /* Judul HP */
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+
+    /* Game HP */
+
+    #game {
+        width: 94vw;
+        height: 600px;
+
+        max-width: 500px;
+    }
+
+
+    /* Target HP */
+
+    #target {
+        font-size: 145px;
+        top: 35px;
+    }
+
+
+    /* Pisau HP */
+
+    #knife {
+        font-size: 65px;
+        bottom: 20px;
+    }
+
+
+    /* Skor HP */
+
+    .score-box {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+
+    .score-box h2 {
+        font-size: 24px;
+    }
+
+
+    /* Tombol HP */
+
+    #throwBtn {
+        width: 90%;
+
+        padding: 18px;
+
+        font-size: 19px;
+    }
+
+
+    .petunjuk {
+        font-size: 14px;
+        margin-top: 12px;
+    }
+
+}
+
+
+/* =====================================
+   HP KECIL
+===================================== */
+
+@media (max-width: 380px) {
+
+    .logo-kiri img,
+    .logo-kanan img {
+        width: 40px;
+        height: 40px;
+    }
+
+
+    .logo-tengah img {
+        width: 55px;
+        height: 55px;
+    }
+
+
+    h1 {
+        font-size: 25px;
+    }
+
+
+    #game {
+        width: 94vw;
+        height: 540px;
+    }
+
+
+    #target {
+        font-size: 125px;
+    }
+
+
+    #knife {
+        font-size: 55px;
+    }
+
 }
