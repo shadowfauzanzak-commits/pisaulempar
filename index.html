@@ -1,31 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
+
 <head>
+    <meta charset="UTF-8">
+
+    <!-- Agar tampilan menyesuaikan HP -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Game Lempar Pisau</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>🔪 Lempar Pisau</h1>
+    <!-- =========================
+         LOGO
+    ========================== -->
+   <div class="logo-container">
 
-<div id="game">
-
-    <div id="target">
-        🎯
+    <!-- 2 logo kiri -->
+    <div class="logo-kiri">
+        <img src="assets/logo1.jpeg" alt="Logo 1">
+        <img src="assets/logo2.jpeg" alt="Logo 2">
     </div>
 
-    <div id="knife">
-        🔪
+    <!-- logo tengah -->
+    <div class="logo-tengah">
+        <img src="assets/logo5.png" alt="Logo Tengah">
+    </div>
+
+    <!-- 2 logo kanan -->
+    <div class="logo-kanan">
+        <img src="assets/logo3.jpeg" alt="Logo 3">
+        <img src="assets/logo4.jpeg" alt="Logo 4">
     </div>
 
 </div>
 
-<h2>Skor: <span id="score">0</span></h2>
+    <!-- =========================
+         JUDUL
+    ========================== -->
 
-<button onclick="throwKnife()">LEMpar Pisau</button>
+    <h1>🔪 Lempar Pisau</h1>
 
-<script src="script.js"></script>
+
+    <!-- =========================
+         AREA GAME
+    ========================== -->
+
+    <div id="game">
+
+        <!-- Target -->
+        <div id="target">
+            🎯
+        </div>
+
+        <!-- Pisau -->
+        <div id="knife">
+            🔪
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         SKOR
+    ========================== -->
+
+    <div class="score-box">
+
+        <h2>
+            Skor:
+            <span id="score">0</span>
+        </h2>
+
+    </div>
+
+
+    <!-- =========================
+         TOMBOL
+    ========================== -->
+
+    <button id="throwBtn" onclick="throwKnife()">
+        🔪 LEMPAR PISAU
+    </button>
+
+
+    <p class="petunjuk">
+        Tekan tombol untuk melempar pisau ke target
+    </p>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 
 </body>
+
 </html>
